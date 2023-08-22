@@ -1,4 +1,40 @@
 .header {
-    position: absolute;
-    top: 3vh;
+  position: absolute;
+  top: 3vh;
+}
+
+.intro {
+  font-size: 2vh;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-box {
+  padding: 1vh;
+  margin-right: 1vh;
+}
+
+.search-btn {
+  padding: 1vh;
+  border-radius: 0 8px 8px 0;
+  border: grey solid 1px;
+  transition: all 0.3s ease-in;
+}
+
+.search-btn:hover {
+  background-color: rgb(0, 28, 88);
+  color: white;
+}
+
+.results-box {
+  position: absolute;
+  width: 75%;
+}
+
+.city-name {
+  border: solid 1px gray;
+  border-top: none;
+  margin: 0;
 }
