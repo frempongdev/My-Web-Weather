@@ -35,6 +35,11 @@ const Home = () => {
   }, [latitude, longitude, dispatch]);
 
   const handleChange = (e) => {
+    if (e.target.value.includes('.')) {
+      const coordArr = e.target.value.split(',');
+      setLatituded(coordArr[0]);
+      setLongitude(coordArr[1]);
+    }
     setinputValue(e.target.value);
     dispatch(fetchLocation(e.target.value));
   };

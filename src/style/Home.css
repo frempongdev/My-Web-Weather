@@ -21,11 +21,12 @@
 }
 
 .search-btn {
+  display: none;
   padding: 1vh;
-  border-radius: 0.01px 8px 8px 0.01px;
+  border-radius: 0.01px 16px 16px 0.01px;
   border: grey solid 1px;
   transition: all 0.3s ease-in;
-  display: none;
+  background-color: rgb(192, 188, 255);
 }
 
 .search-btn:hover {
