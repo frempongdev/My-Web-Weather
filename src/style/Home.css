@@ -36,20 +36,20 @@
 
 .results-box {
   position: absolute;
-  width: 75%;
-  margin-left: 1.7vw;
+  left: 20%;
+  width: 60%;
+  /* margin-left: 1.7vw; */
 }
 
 .city-name {
   background-color: white;
   z-index: 33;
-  border: solid 1px rgb(245, 245, 245);
+  border: solid 1px rgb(202, 202, 202);
   border-top: none;
   margin: 0%;
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  width: 55%;
 }
 
 .city-name:hover {

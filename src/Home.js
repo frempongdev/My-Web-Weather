@@ -60,7 +60,7 @@ const Home = () => {
       <h1 className="header">WEATHER BUDDY</h1>
       <div className="section headline">
         <p className="intro">
-          Please Enter a Cordinate(separated by comma(,)) or City
+          Please Enter a Coordinate(separated by comma(,)) or City
         </p>
       </div>
       <section className="search-bar">
