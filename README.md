@@ -7,7 +7,7 @@
 
 <div align="center">
 
-  <img src="https://www.noaa.gov/sites/default/files/styles/square_width_650/public/2021-02/FocusArea__Weather-02.jpg?h=5dc006f5&itok=20VGa8_F" alt="logo" width="160"  height="auto" />
+  <img src="https://github.com/frempongdev/Image-Master/assets/117144028/865ef0b1-f566-40fb-97ad-f7c417e21e49" alt="logo" width="160"  height="auto" />
   <br/>
    <br/>
 
