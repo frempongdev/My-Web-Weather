@@ -19,7 +19,7 @@
 
 .search-btn {
   padding: 1vh;
-  border-radius: 0px 8px 8px 0px;
+  border-radius: 0.01px 8px 8px 0.01px;
   border: grey solid 1px;
   transition: all 0.3s ease-in;
 }
