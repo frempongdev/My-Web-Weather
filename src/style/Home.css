@@ -77,14 +77,15 @@
   gap: 6vh;
   align-items: center;
 }
+
 .temp {
   justify-self: flex-end;
   position: relative;
 }
 
 .temperature {
-font-size: 10vh;
-color: aliceblue;
+  font-size: 10vh;
+  color: aliceblue;
 }
 
 .degree {
