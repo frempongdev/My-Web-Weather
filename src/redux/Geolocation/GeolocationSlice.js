@@ -4,8 +4,8 @@ export const fetchLocation = createAsyncThunk('location/fetchLocation', async (c
   const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=cc885dd3877084c87abb1055d2ab813c`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log(url);
-  console.log(data);
+  // console.log(url);
+  // console.log(data);
   return data;
 });
 
@@ -17,7 +17,11 @@ const initialState = {
 const geolocationSlice = createSlice({
   name: 'geolocation',
   initialState,
-  reducers: {},
+  reducers: {
+    clearSearchResults: (state) => {
+      state.location = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchLocation.pending, (state) => ({ ...state, isLoading: true }))
@@ -28,4 +32,5 @@ const geolocationSlice = createSlice({
 
 });
 
+export const { clearSearchResults } = geolocationSlice.actions;
 export default geolocationSlice.reducer;

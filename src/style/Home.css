@@ -1,7 +1,7 @@
-.header {
+/* .header {
   position: absolute;
   top: 3vh;
-}
+} */
 
 .intro {
   font-size: 2vh;
@@ -14,11 +14,12 @@
 .search-box {
   padding: 1vh;
   margin-right: 1vh;
+  width: 70%;
 }
 
 .search-btn {
   padding: 1vh;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0.01px 8px 8px 0.01px;
   border: grey solid 1px;
   transition: all 0.3s ease-in;
 }
@@ -31,10 +32,21 @@
 .results-box {
   position: absolute;
   width: 75%;
+  margin-left: 1.7vw;
 }
 
 .city-name {
-  border: solid 1px gray;
+  background-color: white;
+  z-index: 33;
+  border: solid 1px rgb(245, 245, 245);
   border-top: none;
-  margin: 0;
+  margin: 0%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  width: 55%;
+}
+
+.city-name:hover {
+  background-color: rgb(145, 145, 145);
 }
