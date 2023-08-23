@@ -38,7 +38,7 @@
 .city-name {
   background-color: white;
   z-index: 33;
-  border: solid 1px gray;
+  border: solid 1px rgb(245, 245, 245);
   border-top: none;
   margin: 0%;
   text-align: center;
