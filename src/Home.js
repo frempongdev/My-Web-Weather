@@ -88,33 +88,35 @@ const Home = () => {
             {`${weatherDetails?.name}, ${weatherDetails?.sys?.country}`}
           </h2>
           <img src={`https://openweathermap.org/img/wn/${weatherDetails?.weather[0].icon}@2x.png`} alt="" className="icon" />
-          <div className="temp">
-            <span className="temperature">
+          <div className="temp-desc-box">
+            <span className="temp-desc">
               {weatherDetails?.weather[0]?.description}
             </span>
           </div>
-          <div className="wDetails">
+          <div className="w-details">
             <div className="temp">
-              <span className="temperature">Temperature: </span>
-              <span>
-                {(weatherDetails?.main?.temp - 273.15).toFixed(2)}
-                &deg;C
+              <span className="temperature">
+                {(weatherDetails?.main?.temp - 273.15).toFixed(0)}
               </span>
+              <span className="degree">&deg;C</span>
             </div>
-            <div className="temp">
-              <span className="temperature">Humidity: </span>
-              <span>
-                {weatherDetails?.main?.humidity}
-                %
-              </span>
-            </div>
-            <div className="temp">
-              <span className="temperature">Wind Speed: </span>
-              <span>
-                {weatherDetails?.wind?.speed}
-                {' '}
-                metres/second
-              </span>
+
+            <div className="right">
+              <div className="w-info">
+                <span>
+                  {weatherDetails?.main?.humidity}
+                  %
+                </span>
+                <span className="w-info-detail">Humidity</span>
+              </div>
+              <div className="w-info">
+                <span>
+                  {weatherDetails?.wind?.speed}
+                  {' '}
+                  m/s
+                </span>
+                <span className="w-info-detail">Wind Speed</span>
+              </div>
             </div>
           </div>
         </div>
