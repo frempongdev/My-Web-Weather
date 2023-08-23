@@ -1,18 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style/Home.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLocation, clearSearchResults } from './redux/Geolocation/GeolocationSlice';
 import { fetchWeather } from './redux/weather/WeatherSlice';
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const [coordinates, setCoordinates] = useState({});
+
+  useEffect(() => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const userLat = position.coords.latitude;
+        const userLon = position.coords.longitude;
+        setCoordinates({ userLat, userLon });
+      });
+    }
+  }, []);
+
   const [inputValue, setinputValue] = useState('');
-  const [latitude, setLatituded] = useState(null);
-  const [longitude, setLongitude] = useState(null);
+  const [latitude, setLatituded] = useState(coordinates?.userLat);
+  const [longitude, setLongitude] = useState(coordinates?.userLon);
+
+  useEffect(() => {
+    setLatituded(coordinates.userLat);
+    setLongitude(coordinates.userLon);
+  }, [coordinates]);
 
   const { location } = useSelector((state) => state.location);
   const { weatherDetails } = useSelector((state) => state.weather);
 
-  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchWeather({ latitude, longitude }));
+  }, [latitude, longitude, dispatch]);
 
   const handleChange = (e) => {
     setinputValue(e.target.value);
@@ -52,7 +72,7 @@ const Home = () => {
               ))
 
             ) : <p />
-}
+          }
         </div>
       </section>
       <section className="srch-wthr-wrapper">
