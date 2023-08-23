@@ -1,20 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style/Home.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchLocation, clearSearchResults } from './redux/Geolocation/GeolocationSlice';
 import { fetchWeather } from './redux/weather/WeatherSlice';
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const [coordinates, setCoordinates] = useState({});
+
+  useEffect(() => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const userLat = position.coords.latitude;
+        const userLon = position.coords.longitude;
+        setCoordinates({ userLat, userLon });
+      });
+    }
+  }, []);
+
   const [inputValue, setinputValue] = useState('');
-  const [latitude, setLatituded] = useState(null);
-  const [longitude, setLongitude] = useState(null);
+  const [latitude, setLatituded] = useState(coordinates?.userLat);
+  const [longitude, setLongitude] = useState(coordinates?.userLon);
+
+  useEffect(() => {
+    setLatituded(coordinates.userLat);
+    setLongitude(coordinates.userLon);
+  }, [coordinates]);
 
   const { location } = useSelector((state) => state.location);
   const { weatherDetails } = useSelector((state) => state.weather);
 
-  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchWeather({ latitude, longitude }));
+  }, [latitude, longitude, dispatch]);
 
   const handleChange = (e) => {
+    if (e.target.value.includes('.')) {
+      const coordArr = e.target.value.split(',');
+      setLatituded(coordArr[0]);
+      setLongitude(coordArr[1]);
+    }
     setinputValue(e.target.value);
     dispatch(fetchLocation(e.target.value));
   };
@@ -35,7 +60,7 @@ const Home = () => {
       <h1 className="header">WEATHER BUDDY</h1>
       <div className="section headline">
         <p className="intro">
-          Please Enter a Cordinate(separated by comma(,)) or City
+          Please Enter a Coordinate(separated by comma(,)) or City
         </p>
       </div>
       <section className="search-bar">
@@ -52,7 +77,7 @@ const Home = () => {
               ))
 
             ) : <p />
-}
+          }
         </div>
       </section>
       <section className="srch-wthr-wrapper">

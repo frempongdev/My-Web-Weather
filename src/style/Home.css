@@ -15,13 +15,18 @@
   padding: 1vh;
   margin-right: 1vh;
   width: 70%;
+  border-radius: 16px;
+  border: solid 1px gray;
+  text-align: center;
 }
 
 .search-btn {
+  display: none;
   padding: 1vh;
-  border-radius: 0.01px 8px 8px 0.01px;
+  border-radius: 0.01px 16px 16px 0.01px;
   border: grey solid 1px;
   transition: all 0.3s ease-in;
+  background-color: rgb(192, 188, 255);
 }
 
 .search-btn:hover {
@@ -31,20 +36,21 @@
 
 .results-box {
   position: absolute;
-  width: 75%;
-  margin-left: 1.7vw;
+  left: 20%;
+  width: 60%;
+
+  /* margin-left: 1.7vw; */
 }
 
 .city-name {
   background-color: white;
   z-index: 33;
-  border: solid 1px rgb(245, 245, 245);
+  border: solid 1px rgb(202, 202, 202);
   border-top: none;
   margin: 0%;
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  width: 55%;
 }
 
 .city-name:hover {
