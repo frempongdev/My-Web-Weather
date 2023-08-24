@@ -74,7 +74,7 @@
   border-right: none;
   border-left: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.8fr;
   gap: 6vh;
   align-items: center;
 }
