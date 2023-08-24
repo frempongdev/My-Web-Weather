@@ -52,6 +52,10 @@ If link does not work copy URL ( https://atmosphere-360.netlify.app/ )
 
 **Atmosphere 360** is a single page weather application that helps users monitor weather conditions around the world. It enables users search for weather details by cities or by using coordinates.
 
+### Screenshot
+![atmos scsh](https://github.com/frempongdev/My-Web-Weather/assets/117144028/a256c852-ac6e-4993-859e-d6f223588203)
+
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
