@@ -56,7 +56,8 @@
 }
 
 .city-name:hover {
-  background-color: rgb(145, 145, 145);
+  background-color: rgb(144, 169, 223);
+  color: white;
 }
 
 .found-city h2 {
