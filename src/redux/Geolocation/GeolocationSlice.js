@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const fetchLocation = createAsyncThunk('location/fetchLocation', async (city) => {
-  const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=cc885dd3877084c87abb1055d2ab813c`;
+  const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=cc885dd3877084c87abb1055d2ab813c`;
   const response = await fetch(url);
   const data = await response.json();
   // console.log(url);
