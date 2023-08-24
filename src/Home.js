@@ -57,7 +57,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="header">WEATHER BUDDY</h1>
+      <h1 className="header">Atmosphere 360</h1>
       <div className="section headline">
         <p className="intro">
           Please Enter a Coordinate(separated by comma(,)) or City
